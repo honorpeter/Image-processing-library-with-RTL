@@ -1,0 +1,56 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Wed Feb 27 00:37:52 2019
+| Host         : hubbery running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_image_process_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of system_image_process_0_0 (xilinx.com:user:image_process:1.0) from (Rev. 43) to (Rev. 44)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'system_image_process_0_0'.
+
+
+-Upgrade has removed interface 'M00_AXIS_CLK'
+
+-Upgrade has removed interface 'M00_AXIS_RST'
+
+-Upgrade has removed interface 'S00_AXIS_CLK'
+
+-Upgrade has removed interface 'S00_AXIS_RST'
+
+-Upgrade has added interface 'axis_clk' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 'axis_rstn' (xilinx.com:signal:reset:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_image_process_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'm00_axis_aclk'
+
+-Upgrade has removed port 'm00_axis_aresetn'
+
+-Upgrade has removed port 's00_axis_aclk'
+
+-Upgrade has removed port 's00_axis_aresetn'
+
+-Upgrade has added port 'axis_clk'
+
+-Upgrade has added port 'axis_rstn'
+
+
