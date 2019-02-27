@@ -1,0 +1,428 @@
+
+*** Running vivado
+    with args -log system_image_process_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_image_process_0_0.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source system_image_process_0_0.tcl -notrace
+Command: synth_design -top system_image_process_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 1428 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 453.383 ; gain = 95.250
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_image_process_0_0' [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ip/system_image_process_0_0/synth/system_image_process_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'image_process_v1_0' [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/hdl/image_process_v1_0.v:3]
+	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M00_AXIS_START_COUNT bound to: 32 - type: integer 
+	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter AXIS_Pipeline_Length bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Pipelined_Unit' [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/src/Pipelined_Unit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'gray_shift' [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/src/gray_shift.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'gray_shift' (1#1) [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/src/gray_shift.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Pipelined_Unit' (2#1) [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/src/Pipelined_Unit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'fifo' [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/src/fifo.v:3]
+	Parameter data_width bound to: 23 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo' (3#1) [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/src/fifo.v:3]
+WARNING: [Synth 8-689] width (24) of port connection 'data_in' does not match port width (23) of module 'fifo' [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/hdl/image_process_v1_0.v:108]
+WARNING: [Synth 8-689] width (24) of port connection 'data_out' does not match port width (23) of module 'fifo' [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/hdl/image_process_v1_0.v:109]
+WARNING: [Synth 8-3848] Net m00_axis_tstrb in module/entity image_process_v1_0 does not have driver. [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/hdl/image_process_v1_0.v:30]
+WARNING: [Synth 8-3848] Net m00_axis_tlast in module/entity image_process_v1_0 does not have driver. [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/hdl/image_process_v1_0.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'image_process_v1_0' (4#1) [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/hdl/image_process_v1_0.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_image_process_0_0' (5#1) [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ip/system_image_process_0_0/synth/system_image_process_0_0.v:57]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port m00_axis_tstrb[3]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port m00_axis_tstrb[2]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port m00_axis_tstrb[1]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port m00_axis_tstrb[0]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port m00_axis_tlast
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tdata[31]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tdata[30]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tdata[29]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tdata[28]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tdata[27]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tdata[26]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tdata[25]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tdata[24]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tstrb[3]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tstrb[2]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tstrb[1]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tstrb[0]
+WARNING: [Synth 8-3331] design image_process_v1_0 has unconnected port s00_axis_tlast
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 507.461 ; gain = 149.328
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 507.461 ; gain = 149.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 507.461 ; gain = 149.328
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 831.527 ; gain = 3.523
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 831.527 ; gain = 473.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 831.527 ; gain = 473.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 831.527 ; gain = 473.395
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [d:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ipshared/f8ac/src/fifo.v:37]
+INFO: [Synth 8-5546] ROM "full" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "empty" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "almost_full" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "almost_empty" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 831.527 ; gain = 473.395
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     16 Bit       Adders := 2     
+	   3 Input     16 Bit       Adders := 1     
+	   4 Input     14 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 3     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---RAMs : 
+	              736 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module gray_shift 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     16 Bit       Adders := 2     
+	   3 Input     16 Bit       Adders := 1     
+	   4 Input     14 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 3     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     15 Bit        Muxes := 1     
+Module Pipelined_Unit 
+Detailed RTL Component Info : 
++---Registers : 
+	               24 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 3     
++---Registers : 
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
++---RAMs : 
+	              736 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module image_process_v1_0 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3917] design system_image_process_0_0 has port m00_axis_tdata[31] driven by constant 0
+INFO: [Synth 8-3917] design system_image_process_0_0 has port m00_axis_tdata[30] driven by constant 0
+INFO: [Synth 8-3917] design system_image_process_0_0 has port m00_axis_tdata[29] driven by constant 0
+INFO: [Synth 8-3917] design system_image_process_0_0 has port m00_axis_tdata[28] driven by constant 0
+INFO: [Synth 8-3917] design system_image_process_0_0 has port m00_axis_tdata[27] driven by constant 0
+INFO: [Synth 8-3917] design system_image_process_0_0 has port m00_axis_tdata[26] driven by constant 0
+INFO: [Synth 8-3917] design system_image_process_0_0 has port m00_axis_tdata[25] driven by constant 0
+INFO: [Synth 8-3917] design system_image_process_0_0 has port m00_axis_tdata[24] driven by constant 0
+INFO: [Synth 8-3917] design system_image_process_0_0 has port m00_axis_tdata[23] driven by constant 0
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port m00_axis_tstrb[3]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port m00_axis_tstrb[2]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port m00_axis_tstrb[1]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port m00_axis_tstrb[0]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port m00_axis_tlast
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tdata[31]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tdata[30]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tdata[29]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tdata[28]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tdata[27]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tdata[26]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tdata[25]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tdata[24]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tstrb[3]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tstrb[2]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tstrb[1]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tstrb[0]
+WARNING: [Synth 8-3331] design system_image_process_0_0 has unconnected port s00_axis_tlast
+INFO: [Synth 8-3886] merging instance 'inst/u_pipelined_unit/u_gray_shift/gray_b_reg[1]' (FDR) to 'inst/u_pipelined_unit/u_gray_shift/gray_b_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/u_pipelined_unit/u_gray_shift/gray_b_reg[13]' (FDR) to 'inst/u_pipelined_unit/u_gray_shift/gray_b_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/u_pipelined_unit/u_gray_shift/gray_b_reg[14]' (FDR) to 'inst/u_pipelined_unit/u_gray_shift/gray_r_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/u_pipelined_unit/u_gray_shift/gray_r_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/u_pipelined_unit/u_gray_shift/gray_b_reg[15] )
+INFO: [Synth 8-3332] Sequential element (inst/u_pipelined_unit/u_gray_shift/gray_b_reg[15]) is unused and will be removed from module system_image_process_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_pipelined_unit/u_gray_shift/gray_r_reg[15]) is unused and will be removed from module system_image_process_0_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 831.527 ; gain = 473.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++-------------------------+--------------------------+-----------+----------------------+--------------+
+|Module Name              | RTL Object               | Inference | Size (Depth x Width) | Primitives   | 
++-------------------------+--------------------------+-----------+----------------------+--------------+
+|system_image_process_0_0 | inst/u_fifo_0/memory_reg | Implied   | 32 x 8               | RAM32M x 4   | 
++-------------------------+--------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 835.363 ; gain = 477.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 835.586 ; gain = 477.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++-------------------------+--------------------------+-----------+----------------------+--------------+
+|Module Name              | RTL Object               | Inference | Size (Depth x Width) | Primitives   | 
++-------------------------+--------------------------+-----------+----------------------+--------------+
+|system_image_process_0_0 | inst/u_fifo_0/memory_reg | Implied   | 32 x 8               | RAM32M x 4   | 
++-------------------------+--------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'inst/u_fifo_0/rd_p_reg_rep[1]' (FDRE) to 'inst/u_fifo_0/rd_p_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/u_fifo_0/rd_p_reg_rep[0]' (FDRE) to 'inst/u_fifo_0/rd_p_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/u_fifo_0/rd_p_reg_rep[2]' (FDRE) to 'inst/u_fifo_0/rd_p_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/u_fifo_0/rd_p_reg_rep[3]' (FDRE) to 'inst/u_fifo_0/rd_p_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/u_fifo_0/rd_p_reg_rep[4]' (FDRE) to 'inst/u_fifo_0/rd_p_reg[4]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 855.625 ; gain = 497.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 855.625 ; gain = 497.492
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 855.625 ; gain = 497.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 855.625 ; gain = 497.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 855.625 ; gain = 497.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 855.625 ; gain = 497.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 855.625 ; gain = 497.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    15|
+|2     |LUT1   |     4|
+|3     |LUT2   |    10|
+|4     |LUT3   |    36|
+|5     |LUT4   |    26|
+|6     |LUT5   |    18|
+|7     |LUT6   |    23|
+|8     |MUXF7  |     2|
+|9     |RAM32M |     3|
+|10    |FDRE   |    79|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------------------+-------------------+------+
+|      |Instance             |Module             |Cells |
++------+---------------------+-------------------+------+
+|1     |top                  |                   |   216|
+|2     |  inst               |image_process_v1_0 |   216|
+|3     |    u_fifo_0         |fifo               |    53|
+|4     |    u_pipelined_unit |Pipelined_Unit     |   158|
+|5     |      u_gray_shift   |gray_shift         |   150|
++------+---------------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 855.625 ; gain = 497.492
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 855.625 ; gain = 173.426
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 855.625 ; gain = 497.492
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 3 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+47 Infos, 41 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 856.102 ; gain = 509.438
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.runs/system_image_process_0_0_synth_1/system_image_process_0_0.dcp' has been generated.
