@@ -116,11 +116,11 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/system/ip/system_xlconcat_0_0/sim/system_xlconcat_0_0.v" \
-  "../../../bd/system/ipshared/d2dc/hdl/image_process_v1_0.v" \
-  "../../../bd/system/ipshared/d2dc/src/Pipelined_Unit.v" \
-  "../../../bd/system/ipshared/d2dc/src/gray_shift.v" \
-  "../../../bd/system/ip/system_image_process_0_0/sim/system_image_process_0_0.v" \
   "../../../bd/system/sim/system.v" \
+  "../../../bd/system/ipshared/c948/src/Pipelined_Unit.v" \
+  "../../../bd/system/ipshared/c948/src/gray_shift.v" \
+  "../../../bd/system/ipshared/c948/src/image_process_v1_0.v" \
+  "../../../bd/system/ip/system_image_process_v1_0_0_0/sim/system_image_process_v1_0_0_0.v" \
 -endlib
 -makelib xcelium_lib/generic_baseblocks_v2_1_0 \
   "../../../../test_bmp.srcs/sources_1/bd/system/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \

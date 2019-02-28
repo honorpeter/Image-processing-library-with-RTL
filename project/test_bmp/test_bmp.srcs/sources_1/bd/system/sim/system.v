@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Wed Feb 27 23:26:18 2019
+//Date        : Fri Mar  1 00:29:17 2019
 //Host        : hubbery running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -360,9 +360,7 @@ module system
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
 
   wire [31:0]User_DMA_0_M_AXIS_MM2S_TDATA;
-  wire User_DMA_0_M_AXIS_MM2S_TLAST;
   wire User_DMA_0_M_AXIS_MM2S_TREADY;
-  wire [3:0]User_DMA_0_M_AXIS_MM2S_TSTRB;
   wire User_DMA_0_M_AXIS_MM2S_TVALID;
   wire [31:0]User_DMA_0_M_AXI_FULL_ARADDR;
   wire [1:0]User_DMA_0_M_AXI_FULL_ARBURST;
@@ -439,11 +437,9 @@ module system
   wire axi_smc_M00_AXI_WREADY;
   wire [7:0]axi_smc_M00_AXI_WSTRB;
   wire axi_smc_M00_AXI_WVALID;
-  wire [31:0]image_process_0_M00_AXIS_TDATA;
-  wire image_process_0_M00_AXIS_TLAST;
-  wire image_process_0_M00_AXIS_TREADY;
-  wire [3:0]image_process_0_M00_AXIS_TSTRB;
-  wire image_process_0_M00_AXIS_TVALID;
+  wire [31:0]image_process_v1_0_0_m00_axis_TDATA;
+  wire image_process_v1_0_0_m00_axis_TREADY;
+  wire image_process_v1_0_0_m00_axis_TVALID;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -577,9 +573,7 @@ module system
         .m_axis_mm2s_aclk(processing_system7_0_FCLK_CLK0),
         .m_axis_mm2s_aresetn(rst_ps7_0_50M_peripheral_aresetn),
         .m_axis_mm2s_tdata(User_DMA_0_M_AXIS_MM2S_TDATA),
-        .m_axis_mm2s_tlast(User_DMA_0_M_AXIS_MM2S_TLAST),
         .m_axis_mm2s_tready(User_DMA_0_M_AXIS_MM2S_TREADY),
-        .m_axis_mm2s_tstrb(User_DMA_0_M_AXIS_MM2S_TSTRB),
         .m_axis_mm2s_tvalid(User_DMA_0_M_AXIS_MM2S_TVALID),
         .s_axi_lite_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_lite_araddr(ps7_0_axi_periph_M00_AXI_ARADDR[3:0]),
@@ -604,11 +598,11 @@ module system
         .s_axi_lite_wvalid(ps7_0_axi_periph_M00_AXI_WVALID),
         .s_axis_s2mm_aclk(processing_system7_0_FCLK_CLK0),
         .s_axis_s2mm_aresetn(rst_ps7_0_50M_peripheral_aresetn),
-        .s_axis_s2mm_tdata(image_process_0_M00_AXIS_TDATA),
-        .s_axis_s2mm_tlast(image_process_0_M00_AXIS_TLAST),
-        .s_axis_s2mm_tready(image_process_0_M00_AXIS_TREADY),
-        .s_axis_s2mm_tstrb(image_process_0_M00_AXIS_TSTRB),
-        .s_axis_s2mm_tvalid(image_process_0_M00_AXIS_TVALID));
+        .s_axis_s2mm_tdata(image_process_v1_0_0_m00_axis_TDATA),
+        .s_axis_s2mm_tlast(1'b0),
+        .s_axis_s2mm_tready(image_process_v1_0_0_m00_axis_TREADY),
+        .s_axis_s2mm_tstrb({1'b1,1'b1,1'b1,1'b1}),
+        .s_axis_s2mm_tvalid(image_process_v1_0_0_m00_axis_TVALID));
   system_axi_smc_0 axi_smc
        (.M00_AXI_araddr(axi_smc_M00_AXI_ARADDR),
         .M00_AXI_arburst(axi_smc_M00_AXI_ARBURST),
@@ -686,18 +680,14 @@ module system
         .S00_AXI_wvalid(User_DMA_0_M_AXI_FULL_WVALID),
         .aclk(processing_system7_0_FCLK_CLK0),
         .aresetn(rst_ps7_0_50M_peripheral_aresetn));
-  system_image_process_0_0 image_process_0
+  system_image_process_v1_0_0_0 image_process_v1_0_0
        (.axis_clk(processing_system7_0_FCLK_CLK0),
         .axis_rstn(rst_ps7_0_50M_peripheral_aresetn),
-        .m00_axis_tdata(image_process_0_M00_AXIS_TDATA),
-        .m00_axis_tlast(image_process_0_M00_AXIS_TLAST),
-        .m00_axis_tready(image_process_0_M00_AXIS_TREADY),
-        .m00_axis_tstrb(image_process_0_M00_AXIS_TSTRB),
-        .m00_axis_tvalid(image_process_0_M00_AXIS_TVALID),
+        .m00_axis_tdata(image_process_v1_0_0_m00_axis_TDATA),
+        .m00_axis_tready(image_process_v1_0_0_m00_axis_TREADY),
+        .m00_axis_tvalid(image_process_v1_0_0_m00_axis_TVALID),
         .s00_axis_tdata(User_DMA_0_M_AXIS_MM2S_TDATA),
-        .s00_axis_tlast(User_DMA_0_M_AXIS_MM2S_TLAST),
         .s00_axis_tready(User_DMA_0_M_AXIS_MM2S_TREADY),
-        .s00_axis_tstrb(User_DMA_0_M_AXIS_MM2S_TSTRB),
         .s00_axis_tvalid(User_DMA_0_M_AXIS_MM2S_TVALID));
   system_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),

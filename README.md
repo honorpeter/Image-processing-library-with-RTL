@@ -21,7 +21,7 @@
 
 ​	单幅BMP格式的图片由SD卡通过ARM裸机读入，然后写入DDR，再由PL端的DMA读通道读取AXI4形式的数据转换为Stream数据流。随后通过流处理的图像处理IP输出，经由DMA写通道写入DDR，ARM读取数据保存为BMP格式在SD卡中。
 
-
+![design_flow](./picture/project_test_bmp.jpg)
 
 #### 3.2 摄像头开发板验证
 

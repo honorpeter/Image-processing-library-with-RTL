@@ -169,11 +169,8 @@ proc create_root_design { parentCell } {
    CONFIG.NUM_SI {1} \
  ] $axi_smc
 
-  # Create instance: image_process_0, and set properties
-  set image_process_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:image_process:1.0 image_process_0 ]
-  set_property -dict [ list \
-   CONFIG.AXIS_Pipeline_Length {1} \
- ] $image_process_0
+  # Create instance: image_process_v1_0_0, and set properties
+  set image_process_v1_0_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:image_process_v1_0:1.0 image_process_v1_0_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -220,7 +217,9 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_ENET0_PERIPHERAL_DIVISOR1 {1} \
    CONFIG.PCW_ENET1_PERIPHERAL_DIVISOR0 {1} \
    CONFIG.PCW_ENET1_PERIPHERAL_DIVISOR1 {1} \
+   CONFIG.PCW_EN_EMIO_CD_SDIO0 {0} \
    CONFIG.PCW_EN_EMIO_GPIO {1} \
+   CONFIG.PCW_EN_EMIO_WP_SDIO0 {0} \
    CONFIG.PCW_EN_SDIO0 {1} \
    CONFIG.PCW_EN_UART1 {1} \
    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {8} \
@@ -265,6 +264,10 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_MIO_45_IOTYPE {LVCMOS 1.8V} \
    CONFIG.PCW_MIO_45_PULLUP {enabled} \
    CONFIG.PCW_MIO_45_SLEW {slow} \
+   CONFIG.PCW_MIO_47_DIRECTION {in} \
+   CONFIG.PCW_MIO_47_IOTYPE {LVCMOS 1.8V} \
+   CONFIG.PCW_MIO_47_PULLUP {enabled} \
+   CONFIG.PCW_MIO_47_SLEW {slow} \
    CONFIG.PCW_MIO_48_DIRECTION {out} \
    CONFIG.PCW_MIO_48_IOTYPE {LVCMOS 1.8V} \
    CONFIG.PCW_MIO_48_PULLUP {enabled} \
@@ -273,12 +276,13 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_MIO_49_IOTYPE {LVCMOS 1.8V} \
    CONFIG.PCW_MIO_49_PULLUP {enabled} \
    CONFIG.PCW_MIO_49_SLEW {slow} \
-   CONFIG.PCW_MIO_TREE_PERIPHERALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#unassigned#unassigned#UART 1#UART 1#unassigned#unassigned#unassigned#unassigned} \
-   CONFIG.PCW_MIO_TREE_SIGNALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#clk#cmd#data[0]#data[1]#data[2]#data[3]#unassigned#unassigned#tx#rx#unassigned#unassigned#unassigned#unassigned} \
+   CONFIG.PCW_MIO_TREE_PERIPHERALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#unassigned#SD 0#UART 1#UART 1#unassigned#unassigned#unassigned#unassigned} \
+   CONFIG.PCW_MIO_TREE_SIGNALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#clk#cmd#data[0]#data[1]#data[2]#data[3]#unassigned#cd#tx#rx#unassigned#unassigned#unassigned#unassigned} \
    CONFIG.PCW_PCAP_PERIPHERAL_DIVISOR0 {8} \
    CONFIG.PCW_PRESET_BANK1_VOLTAGE {LVCMOS 1.8V} \
    CONFIG.PCW_QSPI_PERIPHERAL_DIVISOR0 {1} \
-   CONFIG.PCW_SD0_GRP_CD_ENABLE {0} \
+   CONFIG.PCW_SD0_GRP_CD_ENABLE {1} \
+   CONFIG.PCW_SD0_GRP_CD_IO {MIO 47} \
    CONFIG.PCW_SD0_GRP_POW_ENABLE {0} \
    CONFIG.PCW_SD0_GRP_WP_ENABLE {0} \
    CONFIG.PCW_SD0_PERIPHERAL_ENABLE {1} \
@@ -326,10 +330,10 @@ proc create_root_design { parentCell } {
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
 
   # Create interface connections
-  connect_bd_intf_net -intf_net User_DMA_0_M_AXIS_MM2S [get_bd_intf_pins User_DMA_0/M_AXIS_MM2S] [get_bd_intf_pins image_process_0/S00_AXIS]
+  connect_bd_intf_net -intf_net User_DMA_0_M_AXIS_MM2S [get_bd_intf_pins User_DMA_0/M_AXIS_MM2S] [get_bd_intf_pins image_process_v1_0_0/s00_axis]
   connect_bd_intf_net -intf_net User_DMA_0_M_AXI_FULL [get_bd_intf_pins User_DMA_0/M_AXI_FULL] [get_bd_intf_pins axi_smc/S00_AXI]
   connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_smc/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
-  connect_bd_intf_net -intf_net image_process_0_M00_AXIS [get_bd_intf_pins User_DMA_0/S_AXIS_S2MM] [get_bd_intf_pins image_process_0/M00_AXIS]
+  connect_bd_intf_net -intf_net image_process_v1_0_0_m00_axis [get_bd_intf_pins User_DMA_0/S_AXIS_S2MM] [get_bd_intf_pins image_process_v1_0_0/m00_axis]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
@@ -338,10 +342,10 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net User_DMA_0_m_axi_full_mm2s_done [get_bd_pins User_DMA_0/m_axi_full_mm2s_done] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net User_DMA_0_m_axi_full_s2mm_done [get_bd_pins User_DMA_0/m_axi_full_s2mm_done] [get_bd_pins xlconcat_0/In1]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins User_DMA_0/m_axi_full_aclk] [get_bd_pins User_DMA_0/m_axis_mm2s_aclk] [get_bd_pins User_DMA_0/s_axi_lite_aclk] [get_bd_pins User_DMA_0/s_axis_s2mm_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins image_process_0/axis_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins User_DMA_0/m_axi_full_aclk] [get_bd_pins User_DMA_0/m_axis_mm2s_aclk] [get_bd_pins User_DMA_0/s_axi_lite_aclk] [get_bd_pins User_DMA_0/s_axis_s2mm_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins image_process_v1_0_0/axis_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_50M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_50M/interconnect_aresetn]
-  connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins User_DMA_0/m_axi_full_aresetn] [get_bd_pins User_DMA_0/m_axis_mm2s_aresetn] [get_bd_pins User_DMA_0/s_axi_lite_aresetn] [get_bd_pins User_DMA_0/s_axis_s2mm_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins image_process_0/axis_rstn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins User_DMA_0/m_axi_full_aresetn] [get_bd_pins User_DMA_0/m_axis_mm2s_aresetn] [get_bd_pins User_DMA_0/s_axi_lite_aresetn] [get_bd_pins User_DMA_0/s_axis_s2mm_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins image_process_v1_0_0/axis_rstn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins processing_system7_0/GPIO_I] [get_bd_pins xlconcat_0/dout]
 
   # Create address segments

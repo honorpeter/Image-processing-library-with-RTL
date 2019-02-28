@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
 -- Date        : Wed Feb 27 23:11:17 2019
 -- Host        : hubbery running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               D:/git/Image-processing-library-with-RTL/project/test_bmp/test_bmp.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top system_rst_ps7_0_50M_0 -prefix
+--               system_rst_ps7_0_50M_0_ system_rst_ps7_0_50M_0_stub.vhdl
 -- Design      : system_rst_ps7_0_50M_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

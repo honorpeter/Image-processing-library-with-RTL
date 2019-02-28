@@ -155,11 +155,11 @@ vlog -work xlconcat_v2_1_1 -64 -incr "+incdir+../../../../test_bmp.srcs/sources_
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/5bb9/hdl/verilog" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/f90c/hdl/verilog" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/ec67/hdl" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/70fd/hdl" "+incdir+D:/xilinx_2018/Vivado/2018.2/data/xilinx_vip/include" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/5bb9/hdl/verilog" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/f90c/hdl/verilog" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/ec67/hdl" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/70fd/hdl" "+incdir+D:/xilinx_2018/Vivado/2018.2/data/xilinx_vip/include" \
 "../../../bd/system/ip/system_xlconcat_0_0/sim/system_xlconcat_0_0.v" \
-"../../../bd/system/ipshared/d2dc/hdl/image_process_v1_0.v" \
-"../../../bd/system/ipshared/d2dc/src/Pipelined_Unit.v" \
-"../../../bd/system/ipshared/d2dc/src/gray_shift.v" \
-"../../../bd/system/ip/system_image_process_0_0/sim/system_image_process_0_0.v" \
 "../../../bd/system/sim/system.v" \
+"../../../bd/system/ipshared/c948/src/Pipelined_Unit.v" \
+"../../../bd/system/ipshared/c948/src/gray_shift.v" \
+"../../../bd/system/ipshared/c948/src/image_process_v1_0.v" \
+"../../../bd/system/ip/system_image_process_v1_0_0_0/sim/system_image_process_v1_0_0_0.v" \
 
 vlog -work generic_baseblocks_v2_1_0 -64 -incr "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/5bb9/hdl/verilog" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/f90c/hdl/verilog" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/ec67/hdl" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/70fd/hdl" "+incdir+D:/xilinx_2018/Vivado/2018.2/data/xilinx_vip/include" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/5bb9/hdl/verilog" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/f90c/hdl/verilog" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/ec67/hdl" "+incdir+../../../../test_bmp.srcs/sources_1/bd/system/ipshared/70fd/hdl" "+incdir+D:/xilinx_2018/Vivado/2018.2/data/xilinx_vip/include" \
 "../../../../test_bmp.srcs/sources_1/bd/system/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \

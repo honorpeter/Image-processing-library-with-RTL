@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Feb 27 23:26:35 2019" VIVADOVERSION="2018.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Mar  1 00:30:02 2019" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -209,22 +209,14 @@
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="s_axis_s2mm_tdata" RIGHT="0" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="m00_axis_tdata"/>
+            <CONNECTION INSTANCE="image_process_v1_0_0" PORT="m00_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axis_s2mm_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="m00_axis_tstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axis_s2mm_tlast" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="m00_axis_tlast"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="s_axis_s2mm_tstrb" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_s2mm_tlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="s_axis_s2mm_tvalid" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="m00_axis_tvalid"/>
+            <CONNECTION INSTANCE="image_process_v1_0_0" PORT="m00_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axi_full_s2mm_done" SIGIS="undef" SIGNAME="User_DMA_0_m_axi_full_s2mm_done">
@@ -239,7 +231,7 @@
         </PORT>
         <PORT DIR="O" NAME="s_axis_s2mm_tready" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="m00_axis_tready"/>
+            <CONNECTION INSTANCE="image_process_v1_0_0" PORT="m00_axis_tready"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="50000000" DIR="I" NAME="s_axis_s2mm_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
@@ -466,27 +458,19 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="m_axis_mm2s_tdata" RIGHT="0" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="s00_axis_tdata"/>
+            <CONNECTION INSTANCE="image_process_v1_0_0" PORT="s00_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="m_axis_mm2s_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="s00_axis_tstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="m_axis_mm2s_tlast" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="s00_axis_tlast"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="m_axis_mm2s_tstrb" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_mm2s_tlast" SIGIS="undef"/>
         <PORT DIR="O" NAME="m_axis_mm2s_tvalid" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="s00_axis_tvalid"/>
+            <CONNECTION INSTANCE="image_process_v1_0_0" PORT="s00_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="m_axis_mm2s_tready" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="image_process_0" PORT="s00_axis_tready"/>
+            <CONNECTION INSTANCE="image_process_v1_0_0" PORT="s00_axis_tready"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="50000000" DIR="I" NAME="m_axis_mm2s_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
@@ -556,7 +540,7 @@
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_lite_rready"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="image_process_0_M00_AXIS" NAME="S_AXIS_S2MM" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="image_process_v1_0_0_m00_axis" NAME="S_AXIS_S2MM" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="WIZ_DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
@@ -683,7 +667,7 @@
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="processing_system7_0"/>
-        <PERIPHERAL INSTANCE="image_process_0"/>
+        <PERIPHERAL INSTANCE="image_process_v1_0_0"/>
       </PERIPHERALS>
     </MODULE>
     <MODULE BD="system_axi_smc_0" BDTYPE="SBD" DRIVERMODE="CORE" FULLNAME="/axi_smc" HWVERSION="1.0" INSTANCE="axi_smc" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" VLNV="xilinx.com:ip:smartconnect:1.0">
@@ -1226,14 +1210,10 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/image_process_0" HWVERSION="1.0" INSTANCE="image_process_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="image_process" VLNV="xilinx.com:user:image_process:1.0">
+    <MODULE FULLNAME="/image_process_v1_0_0" HWVERSION="1.0" INSTANCE="image_process_v1_0_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="image_process_v1_0" VLNV="xilinx.com:user:image_process_v1_0:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="C_S00_AXIS_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_M00_AXIS_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_M00_AXIS_START_COUNT" VALUE="32"/>
-        <PARAMETER NAME="AXIS_Pipeline_Length" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_image_process_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_image_process_v1_0_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1247,29 +1227,9 @@
             <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s00_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tdata">
+        <PORT DIR="O" NAME="m00_axis_tvalid" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="User_DMA_0" PORT="m_axis_mm2s_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s00_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="User_DMA_0" PORT="m_axis_mm2s_tstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s00_axis_tlast" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="User_DMA_0" PORT="m_axis_mm2s_tlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s00_axis_tvalid" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="User_DMA_0" PORT="m_axis_mm2s_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s00_axis_tready" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="User_DMA_0" PORT="m_axis_mm2s_tready"/>
+            <CONNECTION INSTANCE="User_DMA_0" PORT="s_axis_s2mm_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="m00_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tdata">
@@ -1277,68 +1237,62 @@
             <CONNECTION INSTANCE="User_DMA_0" PORT="s_axis_s2mm_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="m00_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="User_DMA_0" PORT="s_axis_s2mm_tstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="m00_axis_tlast" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="User_DMA_0" PORT="s_axis_s2mm_tlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="m00_axis_tvalid" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="User_DMA_0" PORT="s_axis_s2mm_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="m00_axis_tready" SIGIS="undef" SIGNAME="User_DMA_0_s_axis_s2mm_tready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="User_DMA_0" PORT="s_axis_s2mm_tready"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="s00_axis_tready" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="User_DMA_0" PORT="m_axis_mm2s_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="s00_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="User_DMA_0" PORT="m_axis_mm2s_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s00_axis_tvalid" SIGIS="undef" SIGNAME="User_DMA_0_m_axis_mm2s_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="User_DMA_0" PORT="m_axis_mm2s_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="image_process_0_M00_AXIS" NAME="M00_AXIS" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="WIZ_DATA_WIDTH" VALUE="32"/>
+        <BUSINTERFACE BUSNAME="image_process_v1_0_0_m00_axis" NAME="m00_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="system_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="m00_axis_tdata"/>
-            <PORTMAP LOGICAL="TSTRB" PHYSICAL="m00_axis_tstrb"/>
-            <PORTMAP LOGICAL="TLAST" PHYSICAL="m00_axis_tlast"/>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="m00_axis_tvalid"/>
             <PORTMAP LOGICAL="TREADY" PHYSICAL="m00_axis_tready"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="User_DMA_0_M_AXIS_MM2S" NAME="S00_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="WIZ_DATA_WIDTH" VALUE="32"/>
+        <BUSINTERFACE BUSNAME="User_DMA_0_M_AXIS_MM2S" NAME="s00_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="system_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="s00_axis_tdata"/>
-            <PORTMAP LOGICAL="TSTRB" PHYSICAL="s00_axis_tstrb"/>
-            <PORTMAP LOGICAL="TLAST" PHYSICAL="s00_axis_tlast"/>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="s00_axis_tvalid"/>
             <PORTMAP LOGICAL="TREADY" PHYSICAL="s00_axis_tready"/>
           </PORTMAPS>
@@ -1889,8 +1843,8 @@
         <PARAMETER NAME="PCW_ENET1_RESET_IO" VALUE="&lt;Select>"/>
         <PARAMETER NAME="PCW_SD0_PERIPHERAL_ENABLE" VALUE="1"/>
         <PARAMETER NAME="PCW_SD0_SD0_IO" VALUE="MIO 40 .. 45"/>
-        <PARAMETER NAME="PCW_SD0_GRP_CD_ENABLE" VALUE="0"/>
-        <PARAMETER NAME="PCW_SD0_GRP_CD_IO" VALUE="&lt;Select>"/>
+        <PARAMETER NAME="PCW_SD0_GRP_CD_ENABLE" VALUE="1"/>
+        <PARAMETER NAME="PCW_SD0_GRP_CD_IO" VALUE="MIO 47"/>
         <PARAMETER NAME="PCW_SD0_GRP_WP_ENABLE" VALUE="0"/>
         <PARAMETER NAME="PCW_SD0_GRP_WP_IO" VALUE="&lt;Select>"/>
         <PARAMETER NAME="PCW_SD0_GRP_POW_ENABLE" VALUE="0"/>
@@ -2205,10 +2159,10 @@
         <PARAMETER NAME="PCW_MIO_46_IOTYPE" VALUE="&lt;Select>"/>
         <PARAMETER NAME="PCW_MIO_46_DIRECTION" VALUE="&lt;Select>"/>
         <PARAMETER NAME="PCW_MIO_46_SLEW" VALUE="&lt;Select>"/>
-        <PARAMETER NAME="PCW_MIO_47_PULLUP" VALUE="&lt;Select>"/>
-        <PARAMETER NAME="PCW_MIO_47_IOTYPE" VALUE="&lt;Select>"/>
-        <PARAMETER NAME="PCW_MIO_47_DIRECTION" VALUE="&lt;Select>"/>
-        <PARAMETER NAME="PCW_MIO_47_SLEW" VALUE="&lt;Select>"/>
+        <PARAMETER NAME="PCW_MIO_47_PULLUP" VALUE="enabled"/>
+        <PARAMETER NAME="PCW_MIO_47_IOTYPE" VALUE="LVCMOS 1.8V"/>
+        <PARAMETER NAME="PCW_MIO_47_DIRECTION" VALUE="in"/>
+        <PARAMETER NAME="PCW_MIO_47_SLEW" VALUE="slow"/>
         <PARAMETER NAME="PCW_MIO_48_PULLUP" VALUE="enabled"/>
         <PARAMETER NAME="PCW_MIO_48_IOTYPE" VALUE="LVCMOS 1.8V"/>
         <PARAMETER NAME="PCW_MIO_48_DIRECTION" VALUE="out"/>
@@ -2235,8 +2189,8 @@
         <PARAMETER NAME="PCW_MIO_53_SLEW" VALUE="&lt;Select>"/>
         <PARAMETER NAME="preset" VALUE="None"/>
         <PARAMETER NAME="PCW_UIPARAM_GENERATE_SUMMARY" VALUE="NA"/>
-        <PARAMETER NAME="PCW_MIO_TREE_PERIPHERALS" VALUE="unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#unassigned#unassigned#UART 1#UART 1#unassigned#unassigned#unassigned#unassigned"/>
-        <PARAMETER NAME="PCW_MIO_TREE_SIGNALS" VALUE="unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#clk#cmd#data[0]#data[1]#data[2]#data[3]#unassigned#unassigned#tx#rx#unassigned#unassigned#unassigned#unassigned"/>
+        <PARAMETER NAME="PCW_MIO_TREE_PERIPHERALS" VALUE="unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#unassigned#SD 0#UART 1#UART 1#unassigned#unassigned#unassigned#unassigned"/>
+        <PARAMETER NAME="PCW_MIO_TREE_SIGNALS" VALUE="unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#clk#cmd#data[0]#data[1]#data[2]#data[3]#unassigned#cd#tx#rx#unassigned#unassigned#unassigned#unassigned"/>
         <PARAMETER NAME="PCW_PS7_SI_REV" VALUE="PRODUCTION"/>
         <PARAMETER NAME="PCW_FPGA_FCLK0_ENABLE" VALUE="1"/>
         <PARAMETER NAME="PCW_FPGA_FCLK1_ENABLE" VALUE="0"/>
@@ -2685,10 +2639,10 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
             <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="image_process_v1_0_0" PORT="axis_clk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>
-            <CONNECTION INSTANCE="image_process_0" PORT="axis_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -3687,9 +3641,9 @@
             <CONNECTION INSTANCE="User_DMA_0" PORT="s_axi_lite_aresetn"/>
             <CONNECTION INSTANCE="User_DMA_0" PORT="s_axis_s2mm_aresetn"/>
             <CONNECTION INSTANCE="axi_smc" PORT="aresetn"/>
+            <CONNECTION INSTANCE="image_process_v1_0_0" PORT="axis_rstn"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ARESETN"/>
-            <CONNECTION INSTANCE="image_process_0" PORT="axis_rstn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

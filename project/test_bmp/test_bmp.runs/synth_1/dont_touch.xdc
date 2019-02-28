@@ -22,8 +22,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_rst_ps7_
 # IP: bd/system/ip/system_xlconcat_0_0/system_xlconcat_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlconcat_0_0 || ORIG_REF_NAME==system_xlconcat_0_0} -quiet] -quiet
 
-# IP: bd/system/ip/system_image_process_0_0/system_image_process_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_image_process_0_0 || ORIG_REF_NAME==system_image_process_0_0} -quiet] -quiet
+# IP: bd/system/ip/system_image_process_v1_0_0_0/system_image_process_v1_0_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_image_process_v1_0_0_0 || ORIG_REF_NAME==system_image_process_v1_0_0_0} -quiet] -quiet
 
 # IP: bd/system/ip/system_auto_pc_0/system_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_pc_0 || ORIG_REF_NAME==system_auto_pc_0} -quiet] -quiet

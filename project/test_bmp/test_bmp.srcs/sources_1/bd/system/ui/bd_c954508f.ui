@@ -4,29 +4,29 @@
 #  -string -flagsOSRD
 preplace port DDR -pg 1 -y 190 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 210 -defaultsOSRD
-preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -y 310 -defaultsOSRD
-preplace inst User_DMA_0 -pg 1 -lvl 3 -y 260 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -y 270 -defaultsOSRD
+preplace inst User_DMA_0 -pg 1 -lvl 3 -y 210 -defaultsOSRD
 preplace inst axi_smc -pg 1 -lvl 4 -y 200 -defaultsOSRD
-preplace inst image_process_0 -pg 1 -lvl 2 -y 190 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 4 -y 70 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 450 -defaultsOSRD
+preplace inst image_process_v1_0_0 -pg 1 -lvl 2 -y 90 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 4 -y 330 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 310 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -y 210 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 5 1 NJ
-preplace netloc User_DMA_0_m_axi_full_mm2s_done 1 3 1 1080
-preplace netloc image_process_0_M00_AXIS 1 2 1 N
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 270 330 630J 470 NJ 470 NJ 470 1860
-preplace netloc User_DMA_0_M_AXIS_MM2S 1 1 3 270 40 NJ 40 1050
+preplace netloc User_DMA_0_m_axi_full_mm2s_done 1 3 1 1070
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 380 430 NJ 430 NJ 430 1380J 390 1890
+preplace netloc User_DMA_0_M_AXIS_MM2S 1 1 3 360 10 NJ 10 1070
 preplace netloc axi_smc_M00_AXI 1 4 1 N
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 -110 410 240J 320 640J 460 NJ 460 NJ 460 1840
-preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 1 1 230
-preplace netloc xlconcat_0_dout 1 4 2 N 70 1860
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 10 450 NJ 450 NJ 450 NJ 450 1390J 410 1880
+preplace netloc image_process_v1_0_0_m00_axis 1 2 1 690
+preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 1 1 N
+preplace netloc xlconcat_0_dout 1 4 2 1380J 340 1900
 preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 3 260 60 660 60 1060J
-preplace netloc User_DMA_0_M_AXI_FULL 1 3 1 1100
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 -120 420 250 50 670 50 1070 280 1380 330 1850
-preplace netloc User_DMA_0_m_axi_full_s2mm_done 1 3 1 1090
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 650
-levelinfo -pg 1 -140 60 450 860 1240 1610 1880 -top 0 -bot 970
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 3 360 440 680 50 1090
+preplace netloc User_DMA_0_M_AXI_FULL 1 3 1 N
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 10 170 370 170 710 60 1080 120 1390 330 1870
+preplace netloc User_DMA_0_m_axi_full_s2mm_done 1 3 1 1080
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 700
+levelinfo -pg 1 -10 190 530 890 1240 1640 1920 -top 0 -bot 540
 ",
 }
 0
